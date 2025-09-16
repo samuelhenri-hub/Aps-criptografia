@@ -12,7 +12,7 @@ if opcaoUser == 1:
 #DESCRIPTOGRAFIA
 elif opcaoUser == 2:
     chave = int(input("Digite a chave para descriptografar: "))
-    print(f"A mensagem é: {} ")
+    print(f"A mensagem é: {mensagemDescriptografada}")
     #FALTA COMPLETAR A DESCRIPTOGRAFIA
 
 #SAIR
