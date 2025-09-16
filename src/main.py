@@ -1,10 +1,12 @@
-#importando biblioteca string
-import string
+#escolha do usuario
+opcao_user = int(input("1 - Criptografar\n2 - Descriptografar\n"))
 
-#MENU PARA ESCOLHA DO USARIO
-print("------CRIPTOGRAFIA------\n")
-opcaoUser = int(input(" 1 - Criptografar\n 2 - Descriptografar\n 3 - Sair \n"))
-#lista de caracteres valídos
-letra = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
-#variavel para a mensagem descriptografado
-mensagemDescriptografada = ""
+#pedir mensagem e chave
+mensagem = input("Digite a mensagem: ")
+chave = int(input("Digite a chave: "))
+
+#inicializar variavel da mensagem final
+mensagem_final = ""
+
+
+
