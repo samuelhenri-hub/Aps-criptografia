@@ -26,6 +26,17 @@ for caractere in mensagem:
             print("------OBRIGADO POR USAR O PROGRAMA------")
             exit()
 
+        else:
+            print("Selecione uma opção valida")
+            retorno = int(input("Deseja retornar ao menu? 1 - Sim / 2 - Não\n"))
+
+            if retorno == 1:
+                opcao_user = int(input("1 - Criptografar\n2 - Descriptografar\n3 - Sair\n"))
+                continue
+            else:
+                print("------OBRIGADO POR USAR O PROGRAMA------")
+                exit()
+
         nova_letra = chr(nova_posicao + ord('a'))
         mensagem_final += nova_letra
     else:
