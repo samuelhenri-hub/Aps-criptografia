@@ -1,8 +1,10 @@
 # escolha do usuario
-opcao_user = int(input("1 - Criptografar\n2 - Descriptografar\n"))
+print("\n------BEM VINDO AO PROGRAMA DE CRIPTOGRAFIA------\n")
+print("SELECIONE A OPÇÃO DESEJADA")
+opcao_user = int(input("1 - Criptografar\n2 - Descriptografar\n3 - Sair\n"))
 
 # pedir mensagem e chave
-mensagem = input("Digite a mensagem: ")
+mensagem = input("\nDigite a mensagem: ")
 chave = int(input("Digite a chave: ")) #numero de posicoes para deslocar
 
 # inicializar variavel da mensagem final
@@ -16,8 +18,13 @@ for caractere in mensagem:
 
         if opcao_user == 1:  # criptografar
             nova_posicao = (posicao + chave) % 26
-        elif opcao_user == 2:  # descriptografar
+
+        elif opcao_user == 2:  # descriptografa
             nova_posicao = (posicao - chave) % 26
+
+        elif opcao_user == 3:
+            print("------OBRIGADO POR USAR O PROGRAMA------")
+            exit()
 
         nova_letra = chr(nova_posicao + ord('a'))
         mensagem_final += nova_letra
