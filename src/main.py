@@ -1,7 +1,15 @@
 # escolha do usuario
 print("\n------BEM VINDO AO PROGRAMA DE CRIPTOGRAFIA------\n")
 print("SELECIONE A OPÇÃO DESEJADA")
-opcao_user = int(input("1 - Criptografar\n2 - Descriptografar\n"))
+opcao_user = int(input("1 - Criptografar\n2 - Descriptografar\n3 - Sair\n"))
+
+    if opcao_user == 3:
+        print("\nSaindo do programa...")
+        exit()
+
+    elif opcao_user > 3:
+        print("\nFunção invalida")
+        exit()
 
 # pedir mensagem e chave
 mensagem = input("\nDigite a mensagem: ")
