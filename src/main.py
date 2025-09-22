@@ -6,13 +6,18 @@ def menu():
         print("2 - Descriptografar")
         print("3 - Sair\n")
         try:
-            opcao = int(input("SELECIONE A OPÇÃO DESEJADA"))
-            if opcao in [1, 2, 3]:
-                return opcao
+            opcao_User = int(input("SELECIONE A OPÇÃO DESEJADA"))
+            if opcao_User == 1 or opcao_User == 2:
+                return opcao_User
+            elif opcao_User == 3:
+                print("\nSaindo do programa...\n")
+                print("\n------FIM DO PROGRAMA------\n")
+                exit()
             else:
-                print("Opção inválida. Tente novamente.")
+                print("\nOpção inválida. Tente novamente.\n")
+                print("Escolha entre 1 a 3")
         except ValueError:
-            print("Entrada inválida. Por favor, insira um número.")
+            print("\nEntrada inválida, digite um numero inteiro\n")
 
 # pedir mensagem e chave
 mensagem = input("\nDigite a mensagem: ")
