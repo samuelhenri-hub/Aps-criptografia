@@ -32,24 +32,21 @@ def mensagem_chave():
                 print("\nA chave não pode ser zero")
         except ValueError:
             print("\nNumero inválido, digite um numero inteiro\n")
+
+def criptografia_descriptografia(mensagem, chave, opcao_user):
     mensagem_final = ""
-
-# percorrer cada caractere da mensagem
-for caractere in mensagem:
-    if caractere.isalpha():  # verifica se o caractere é uma letra
-        letra = caractere.lower()
-        posicao = ord(letra) - ord('a')
-
+    for caractere in mensagem:
+        if caractere.isalpha():  # verifica se o caractere é uma letra
+            letra = caractere.lower()
+            posicao = ord(letra) - ord('a')
         if opcao_user == 1:  # criptografar
             nova_posicao = (posicao + chave) % 26
-
         elif opcao_user == 2:  # descriptografia
             nova_posicao = (posicao - chave) % 26
-
-        nova_letra = chr(nova_posicao + ord('a'))
-        mensagem_final += nova_letra
-    else:
-        mensagem_final += caractere  # mantém o caractere original
+            nova_letra = chr(nova_posicao + ord('a'))
+            mensagem_final += nova_letra
+        else:
+            mensagem_final += caractere  # mantém o caractere original
 
 print("\nMensagem final:", mensagem_final, "\n")
 print("------FIM DO PROGRAMA------\n")
