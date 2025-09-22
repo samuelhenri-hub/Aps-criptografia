@@ -6,7 +6,7 @@ def menu():
         print("2 - Descriptografar")
         print("3 - Sair\n")
         try:
-            opcao_User = int(input("SELECIONE A OPÇÃO DESEJADA"))
+            opcao_User = int(input("SELECIONE A OPÇÃO DESEJADA: "))
             if opcao_User == 1 or opcao_User == 2:
                 return opcao_User
             elif opcao_User == 3:
@@ -23,30 +23,40 @@ def mensagem_chave():
     mensagem = input("\nDigite a mensagem: ").strip()
     if not mensagem:
         print("\nA mensagem esta vazia, Tente novamente!!\n")
-        return mensagem()
+        return mensagem_chave()
     
     while True:
         try:
             chave = int(input("Digite a chave: "))
             if chave == 0:
                 print("\nA chave não pode ser zero")
+                continue  
+            return mensagem, chave  
         except ValueError:
             print("\nNumero inválido, digite um numero inteiro\n")
 
 def criptografia_descriptografia(mensagem, chave, opcao_user):
     mensagem_final = ""
     for caractere in mensagem:
-        if caractere.isalpha():  # verifica se o caractere é uma letra
+        if caractere.isalpha():  
             letra = caractere.lower()
             posicao = ord(letra) - ord('a')
-        if opcao_user == 1:  # criptografar
-            nova_posicao = (posicao + chave) % 26
-        elif opcao_user == 2:  # descriptografia
-            nova_posicao = (posicao - chave) % 26
-            nova_letra = chr(nova_posicao + ord('a'))
-            mensagem_final += nova_letra
+            if opcao_user == 1:  
+                nova_posicao = (posicao + chave) % 26
+                nova_letra = chr(nova_posicao + ord('a')) 
+                mensagem_final += nova_letra
+            elif opcao_user == 2:  # descriptografia
+                nova_posicao = (posicao - chave) % 26
+                nova_letra = chr(nova_posicao + ord('a'))
+                mensagem_final += nova_letra
         else:
-            mensagem_final += caractere  # mantém o caractere original
+            mensagem_final += caractere  
+    print("\nMensagem final:", mensagem_final, "\n")  
+    print("------FIM DO PROGRAMA------\n")
 
-print("\nMensagem final:", mensagem_final, "\n")
-print("------FIM DO PROGRAMA------\n")
+if __name__ == "__main__":
+    opcao = menu()
+    if opcao in [1, 2]:
+        mensagem, chave = mensagem_chave()
+        criptografia_descriptografia(mensagem, chave, opcao)
+
