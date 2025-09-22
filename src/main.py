@@ -17,14 +17,22 @@ def menu():
                 print("\nOpção inválida. Tente novamente.\n")
                 print("Escolha entre 1 a 3")
         except ValueError:
-            print("\nEntrada inválida, digite um numero inteiro\n")
+            print("\nNumero inválido, digite um numero inteiro\n")
 
-# pedir mensagem e chave
-mensagem = input("\nDigite a mensagem: ")
-chave = int(input("Digite a chave: ")) #numero de posicoes para deslocar
-
-# inicializar variavel da mensagem final
-mensagem_final = ""
+def mensagem_chave():
+    mensagem = input("\nDigite a mensagem: ").strip()
+    if not mensagem:
+        print("\nA mensagem esta vazia, Tente novamente!!\n")
+        return mensagem()
+    
+    while True:
+        try:
+            chave = int(input("Digite a chave: "))
+            if chave == 0:
+                print("\nA chave não pode ser zero")
+        except ValueError:
+            print("\nNumero inválido, digite um numero inteiro\n")
+    mensagem_final = ""
 
 # percorrer cada caractere da mensagem
 for caractere in mensagem:
