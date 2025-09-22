@@ -47,7 +47,7 @@ def criptografia_descriptografia(mensagem, chave, opcao_user):
                 nova_posicao = (posicao + chave) % 26
                 nova_letra = chr(nova_posicao + ord('a')) 
                 mensagem_final += nova_letra
-            elif opcao_user == 2:  # descriptografia
+            elif opcao_user == 2:
                 nova_posicao = (posicao - chave) % 26
                 nova_letra = chr(nova_posicao + ord('a'))
                 mensagem_final += nova_letra
