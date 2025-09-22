@@ -10,7 +10,7 @@ def menu():
             if opcao_User == 1 or opcao_User == 2:
                 return opcao_User
             elif opcao_User == 3:
-                print("\nSaindo do programa...\n")
+                print("\nSaindo do programa...")
                 print("\n------FIM DO PROGRAMA------\n")
                 exit()
             else:
