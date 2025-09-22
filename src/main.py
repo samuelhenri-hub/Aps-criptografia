@@ -1,4 +1,5 @@
 # escolha do usuario
+<<<<<<< HEAD
 def menu():
     while True:
         print("\n------BEM VINDO AO PROGRAMA DE CRIPTOGRAFIA------\n")
@@ -18,6 +19,19 @@ def menu():
                 print("Escolha entre 1 a 3")
         except ValueError:
             print("\nEntrada inválida, digite um numero inteiro\n")
+=======
+print("\n------BEM VINDO AO PROGRAMA DE CRIPTOGRAFIA------\n")
+print("SELECIONE A OPÇÃO DESEJADA")
+opcao_user = int(input("1 - Criptografar\n2 - Descriptografar\n3 - Sair\n"))
+
+    if opcao_user == 3:
+        print("\nSaindo do programa...")
+        exit()
+
+    elif opcao_user > 3:
+        print("\nFunção invalida")
+        exit()
+>>>>>>> a44935310dd723c2b0c884542d8a3eadcb1f8a1c
 
 # pedir mensagem e chave
 mensagem = input("\nDigite a mensagem: ")
