@@ -1,7 +1,18 @@
 # escolha do usuario
-print("\n------BEM VINDO AO PROGRAMA DE CRIPTOGRAFIA------\n")
-print("SELECIONE A OPÇÃO DESEJADA")
-opcao_user = int(input("1 - Criptografar\n2 - Descriptografar\n"))
+def menu():
+    while True:
+        print("\n------BEM VINDO AO PROGRAMA DE CRIPTOGRAFIA------\n")
+        print("1 - Criptografar")
+        print("2 - Descriptografar")
+        print("3 - Sair\n")
+        try:
+            opcao = int(input("SELECIONE A OPÇÃO DESEJADA"))
+            if opcao in [1, 2, 3]:
+                return opcao
+            else:
+                print("Opção inválida. Tente novamente.")
+        except ValueError:
+            print("Entrada inválida. Por favor, insira um número.")
 
 # pedir mensagem e chave
 mensagem = input("\nDigite a mensagem: ")
