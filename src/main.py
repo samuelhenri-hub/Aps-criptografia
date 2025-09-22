@@ -19,6 +19,7 @@ def menu():
         except ValueError:
             print("\nNumero inválido, digite um numero inteiro\n")
 
+#pedindo chave e mensagem
 def mensagem_chave():
     mensagem = input("\nDigite a mensagem: ").strip()
     if not mensagem:
@@ -35,6 +36,7 @@ def mensagem_chave():
         except ValueError:
             print("\nNumero inválido, digite um numero inteiro\n")
 
+#pedino cirptografia e descriptografia
 def criptografia_descriptografia(mensagem, chave, opcao_user):
     mensagem_final = ""
     for caractere in mensagem:
@@ -54,6 +56,7 @@ def criptografia_descriptografia(mensagem, chave, opcao_user):
     print("\nMensagem final:", mensagem_final, "\n")  
     print("------FIM DO PROGRAMA------\n")
 
+#pra tudo rodar
 if __name__ == "__main__":
     opcao = menu()
     if opcao in [1, 2]:
