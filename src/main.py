@@ -28,9 +28,6 @@ def mensagem_chave():
     while True:
         try:
             chave = int(input("Digite a chave: "))
-            if chave == 0:
-                print("\nA chave não pode ser zero")
-                continue  
             return mensagem, chave  
         except ValueError:
             print("\nNumero inválido, digite um numero inteiro\n")
