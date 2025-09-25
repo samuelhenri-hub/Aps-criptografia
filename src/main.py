@@ -65,4 +65,3 @@ if __name__ == "__main__":
         if opcao in [1, 2]:
             mensagem, chave = mensagem_chave()
             criptografia_descriptografia(mensagem, chave, opcao)
-
