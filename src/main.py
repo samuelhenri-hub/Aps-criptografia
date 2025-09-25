@@ -36,27 +36,33 @@ def mensagem_chave():
 #pedino cirptografia e descriptografia
 def criptografia_descriptografia(mensagem, chave, opcao_user):
     mensagem_final = ""
+    
     for caractere in mensagem:
         if caractere.isalpha():  
+            
+            maiscula = caractere.isupper()
             letra = caractere.lower()
             posicao = ord(letra) - ord('a')
+            
             if opcao_user == 1:  
                 nova_posicao = (posicao + chave) % 26
                 nova_letra = chr(nova_posicao + ord('a')) 
-                mensagem_final += nova_letra
             elif opcao_user == 2:
                 nova_posicao = (posicao - chave) % 26
                 nova_letra = chr(nova_posicao + ord('a'))
-                mensagem_final += nova_letra
+            if maiscula:
+                nova_letra = nova_letra.upper()
+                
+            mensagem_final += nova_letra
         else:
             mensagem_final += caractere  
     print("\nMensagem final:", mensagem_final, "\n")  
-    print("------FIM DO PROGRAMA------\n")
 
 #pra tudo rodar
 if __name__ == "__main__":
-    opcao = menu()
-    if opcao in [1, 2]:
-        mensagem, chave = mensagem_chave()
-        criptografia_descriptografia(mensagem, chave, opcao)
+    while True:
+        opcao = menu()
+        if opcao in [1, 2]:
+            mensagem, chave = mensagem_chave()
+            criptografia_descriptografia(mensagem, chave, opcao)
 
